@@ -55,21 +55,9 @@
             
   <div class="section" id="redis">
 <h1>Redis 命令参考<a class="headerlink" href="#redis" title="Permalink to this headline">¶</a></h1>
-<p>本文档是 <a class="reference external" href="http://redis.io/commands">Redis Command Reference</a> 和 <a class="reference external" href="http://redis.io/documentation">Redis Documentation</a> 的中文翻译版：
-所有 Redis 命令文档均已翻译完毕，
-Redis 最重要的一部分主题（topic）文档，
-比如事务、持久化、复制、Sentinel、集群等文章也已翻译完毕。</p>
-<p>文档目前描述的内容以 Redis 2.8 版本为准，
-查看<a class="reference internal" href="change_log.html#change-log"><em>更新日志(change log)</em></a>可以了解本文档对 Redis 2.8 所做的更新。</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<img alt="_images/cover.png" class="align-left" src="_images/cover.png" />
-<p>由本文档的翻译者 huangz 创作的《Redis 设计与实现》一书正在销售中，
-该书详细地介绍了 Redis 内部的运作原理以及各项功能的实现原理，
-是一本致力于帮助 Redis 使用者加深对 Redis 的理解，
-并且更高效地使用 Redis 的书籍。</p>
-<p class="last">欢迎访问 <a class="reference external" href="http://www.RedisBook.com">RedisBook.com</a> 并了解《Redis 设计与实现》的更多相关信息。</p>
-</div>
+<p>本文档是 <a class="reference external" href="http://redis.io/commands">Redis Command Reference</a> 和 <a class="reference external" href="http://redis.io/documentation">Redis Documentation</a> 的中文翻译版，
+阅读这个文档可以帮助你了解 Redis 命令的具体使用方法，
+并学会如何使用 Redis 的事务、持久化、复制、Sentinel、集群等功能。</p>
 <div class="section" id="ctrl-f">
 <h2>命令目录(使用 CTRL + F 快速查找)：<a class="headerlink" href="#ctrl-f" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -115,6 +103,7 @@ Redis 最重要的一部分主题（topic）文档，
 <li class="toctree-l2"><a class="reference internal" href="string/append.html">APPEND</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string/bitcount.html">BITCOUNT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string/bitop.html">BITOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string/bitfield.html">BITFIELD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string/decr.html">DECR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string/decrby.html">DECRBY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string/get.html">GET</a></li>
@@ -156,6 +145,7 @@ Redis 最重要的一部分主题（topic）文档，
 <li class="toctree-l2"><a class="reference internal" href="hash/hsetnx.html">HSETNX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hash/hvals.html">HVALS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hash/hscan.html">HSCAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash/hstrlen.html">HSTRLEN</a></li>
 </ul>
 </li>
 </ul>
@@ -251,6 +241,21 @@ Redis 最重要的一部分主题（topic）文档，
 </td>
 <td><div class="toctree-wrapper first last compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="geo/index.html">GEO（地理位置）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geo/geoadd.html">GEOADD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo/geopos.html">GEOPOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo/geodist.html">GEODIST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo/georadius.html">GEORADIUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo/georadiusbymember.html">GEORADIUSBYMEMBER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo/geohash.html">GEOHASH</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="pub_sub/index.html">Pub/Sub（发布/订阅）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pub_sub/psubscribe.html">PSUBSCRIBE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pub_sub/publish.html">PUBLISH</a></li>
@@ -263,8 +268,7 @@ Redis 最重要的一部分主题（topic）文档，
 </ul>
 </div>
 </td>
-</tr>
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
+<td><div class="toctree-wrapper first last compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="transaction/index.html">Transaction（事务）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="transaction/discard.html">DISCARD</a></li>
@@ -304,7 +308,8 @@ Redis 最重要的一部分主题（topic）文档，
 </ul>
 </div>
 </td>
-<td><div class="toctree-wrapper first last compound">
+</tr>
+<tr class="row-even"><td><div class="toctree-wrapper first last compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="server/index.html">Server（服务器）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="server/bgrewriteaof.html">BGREWRITEAOF</a></li>
@@ -337,18 +342,12 @@ Redis 最重要的一部分主题（topic）文档，
 </ul>
 </div>
 </td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<img alt="_images/redis-logo.jpg" class="align-left" src="_images/redis-logo.jpg" />
-<p>由本文档翻译者 huangz 主讲的 Redis 课程 —— 《Redis 从入门到精通》现正接受报名： <a class="reference external" href="http://www.chinahadoop.cn/course/53">http://www.chinahadoop.cn/course/53</a> 。</p>
-<p class="last">课程的内容由浅入深，
-覆盖了 Redis 的应用、配置、管理和运行原理等各个方面，
-旨在帮助 Redis 的初、中级使用者全面地了解 Redis ，
-欢迎各位踊跃报名。</p>
-</div>
 </div>
 <div class="section" id="id1">
 <h2>文档<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -407,11 +406,12 @@ Redis 最重要的一部分主题（topic）文档，
 <tr class="row-even"><td><div class="toctree-wrapper first last compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="topic/replication.html">复制（Replication）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id1">复制功能的运作原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id2">部分重同步</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id3">配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id4">只读从服务器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id5">从服务器相关配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id1">关闭主服务器持久化时，复制功能的数据安全</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id2">复制功能的运作原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id3">部分重同步</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id4">配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id5">只读从服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topic/replication.html#id6">从服务器相关配置</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topic/replication.html#n">主服务器只在有至少 N 个从服务器的情况下，才执行写操作</a></li>
 </ul>
 </li>
@@ -532,23 +532,49 @@ Redis 最重要的一部分主题（topic）文档，
 </div>
 <div class="section" id="id2">
 <h2>关于<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>本文档由 <a class="reference external" href="http://www.huangz.me">huangz</a> 翻译，
+<p>本文档由 <a class="reference external" href="http://www.huangz.me">黄健宏（huangz）</a> 翻译，
 版权归 Redis 官方所有。</p>
-<p>关注 <a class="reference external" href="https://github.com/huangz1990/redis">文档的 github 项目</a> 可以随时追踪文档的最新更新，
-有任何问题、意见或建议，
-可以在文档配套的 disqus 论坛里留言，
+<p><a class="reference internal" href="change_log.html#change-log"><span>更新日志(change log)</span></a> 列出了本文档的主要更新细节，
+你也可以通过关注 <a class="reference external" href="https://github.com/huangz1990/redis">文档的 github 项目</a> 来随时追踪文档的最新更新信息。</p>
+<p>有任何问题、意见或建议，
+请在文档配套的 disqus 论坛里留言，
 或者直接联系译者。</p>
 </div>
 <div class="section" id="id3">
-<h2>通过捐款支持本文档<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>对 Redis 的文档更新进行追踪并及时地进行翻译需要花费大量的时间和精力，
-如果你喜欢这个《Redis 命令参考》文档的话，
-可以通过捐款的方式，
-支持译者继续对 Redis 文档进行翻译，
-并将这个文档更好地维护下去。</p>
-<p>你可以通过使用<a class="reference external" href="https://mobile.alipay.com/main/download.htm?action=mobileClient">支付宝钱包</a>扫描以下二维码来进行捐款，
-或者通过向支付宝帐号 <a class="reference external" href="mailto:huangz1990&#37;&#52;&#48;gmail&#46;com">huangz1990<span>&#64;</span>gmail<span>&#46;</span>com</a> 转帐来进行捐款。</p>
-<img alt="_images/pay_to_huangz.png" src="_images/pay_to_huangz.png" />
+<h2>Redis 书籍推荐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/cover.png" class="align-left" src="_images/cover.png" />
+<p>由本文档译者黄健宏创作的《Redis 设计与实现》一书正在销售中，
+该书详细地介绍了 Redis 内部的运作原理以及各项功能的实现原理，
+是一本致力于帮助 Redis 使用者加深对 Redis 的理解，
+并且更高效地使用 Redis 的书籍。</p>
+<div class="line-block">
+<div class="line">欢迎访问 <a class="reference external" href="http://www.RedisBook.com">RedisBook.com</a> 并了解《Redis 设计与实现》的更多相关信息。</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<img alt="_images/riacn-cover.png" class="align-left" src="_images/riacn-cover.png" />
+<p>由《Redis命令参考》的译者黄健宏翻译的《Redis实战》一书正在火热发售中，
+该书深入浅出地介绍了 Redis 的五种数据结构，
+并通过一系列实用的示例深刻地展示了 Redis 的用法。
+此外，
+《Redis实战》还介绍了多种扩展和优化 Redis 的方法，
+无论是 Redis 新手还是有一定经验的 Redis 使用者，
+应该都能从此书中获益。</p>
+<p>欢迎访问 <a class="reference external" href="http://redisinaction.com">redisinaction.com</a> 并了解《Redis实战》的更多相关信息。</p>
+<hr class="docutils" />
+<img alt="_images/redis-logo-single.png" class="align-left" src="_images/redis-logo-single.png" />
+<p>由本文档译者制作的《Redis命令速查表》正在销售中！
+该表能够与本文档相辅相成，
+帮助读者更好地了解和查阅 Redis 命令，
+有兴趣的读者可以通过访问以下链接来了解更多信息：
+<a class="reference external" href="https://selfstore.io/products/538">https://selfstore.io/products/538</a></p>
+</div>
+<div class="section" id="id4">
+<h2>参加群讨论<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>欢迎各位《Redis命令参考》读者加入 Redis 技术讨论 QQ 群 398976550 ，
+你可以在群里面分享你的 Redis 使用心得，
+又或者跟其他人讨论你在使用 Redis 过程中遇到的问题。</p>
 </div>
 </div>
 
@@ -577,17 +603,9 @@ Redis 最重要的一部分主题（topic）文档，
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -608,9 +626,17 @@ Redis 最重要的一部分主题（topic）文档，
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>

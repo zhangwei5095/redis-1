@@ -63,7 +63,7 @@
 <span id="id1"></span><h1>SAVE<a class="headerlink" href="#save" title="Permalink to this headline">¶</a></h1>
 <p><strong>SAVE</strong></p>
 <p><a class="reference internal" href="#save">SAVE</a> 命令执行一个同步保存操作，将当前 Redis 实例的所有数据快照(snapshot)以 RDB 文件的形式保存到硬盘。</p>
-<p>一般来说，在生产环境很少执行 <a class="reference internal" href="#save">SAVE</a> 操作，因为它会阻塞所有客户端，保存数据库的任务通常由 <a class="reference internal" href="bgsave.html#bgsave"><em>BGSAVE</em></a> 命令异步地执行。然而，如果负责保存数据的后台子进程不幸出现问题时， <a class="reference internal" href="#save">SAVE</a> 可以作为保存数据的最后手段来使用。</p>
+<p>一般来说，在生产环境很少执行 <a class="reference internal" href="#save">SAVE</a> 操作，因为它会阻塞所有客户端，保存数据库的任务通常由 <a class="reference internal" href="bgsave.html#bgsave"><span>BGSAVE</span></a> 命令异步地执行。然而，如果负责保存数据的后台子进程不幸出现问题时， <a class="reference internal" href="#save">SAVE</a> 可以作为保存数据的最后手段来使用。</p>
 <p>请参考文档： <a class="reference external" href="http://redis.io/topics/persistence">Redis 的持久化运作方式(英文)</a> 以获取更多消息。</p>
 <dl class="docutils">
 <dt><strong>可用版本：</strong></dt>
@@ -104,17 +104,9 @@
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -139,9 +131,17 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>

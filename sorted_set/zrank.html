@@ -64,7 +64,7 @@
 <p><strong>ZRANK key member</strong></p>
 <p>返回有序集 <code class="docutils literal"><span class="pre">key</span></code> 中成员 <code class="docutils literal"><span class="pre">member</span></code> 的排名。其中有序集成员按 <code class="docutils literal"><span class="pre">score</span></code> 值递增(从小到大)顺序排列。</p>
 <p>排名以 <code class="docutils literal"><span class="pre">0</span></code> 为底，也就是说， <code class="docutils literal"><span class="pre">score</span></code> 值最小的成员排名为 <code class="docutils literal"><span class="pre">0</span></code> 。</p>
-<p>使用 <a class="reference internal" href="zrevrank.html#zrevrank"><em>ZREVRANK</em></a> 命令可以获得成员按 <code class="docutils literal"><span class="pre">score</span></code> 值递减(从大到小)排列的排名。</p>
+<p>使用 <a class="reference internal" href="zrevrank.html#zrevrank"><span>ZREVRANK</span></a> 命令可以获得成员按 <code class="docutils literal"><span class="pre">score</span></code> 值递减(从大到小)排列的排名。</p>
 <dl class="docutils">
 <dt><strong>可用版本：</strong></dt>
 <dd>&gt;= 2.0.0</dd>
@@ -116,17 +116,9 @@ redis&gt; ZRANK salary tom                     # 显示 tom 的薪水排名，�
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -151,9 +143,17 @@ redis&gt; ZRANK salary tom                     # 显示 tom 的薪水排名，�
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>

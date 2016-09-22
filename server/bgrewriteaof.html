@@ -66,7 +66,7 @@
 <p>即使 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 执行失败，也不会有任何数据丢失，因为旧的 AOF 文件在 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 成功之前不会被修改。</p>
 <p>重写操作只会在没有其他持久化工作在后台执行时被触发，也就是说：</p>
 <ul class="simple">
-<li>如果 Redis 的子进程正在执行快照的保存工作，那么 AOF 重写的操作会被预定(scheduled)，等到保存工作完成之后再执行 AOF 重写。在这种情况下， <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 的返回值仍然是 <code class="docutils literal"><span class="pre">OK</span></code> ，但还会加上一条额外的信息，说明 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 要等到保存操作完成之后才能执行。在 Redis 2.6 或以上的版本，可以使用 <a class="reference internal" href="info.html#info"><em>INFO</em></a> 命令查看 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 是否被预定。</li>
+<li>如果 Redis 的子进程正在执行快照的保存工作，那么 AOF 重写的操作会被预定(scheduled)，等到保存工作完成之后再执行 AOF 重写。在这种情况下， <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 的返回值仍然是 <code class="docutils literal"><span class="pre">OK</span></code> ，但还会加上一条额外的信息，说明 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 要等到保存操作完成之后才能执行。在 Redis 2.6 或以上的版本，可以使用 <a class="reference internal" href="info.html#info"><span>INFO</span></a> 命令查看 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 是否被预定。</li>
 <li>如果已经有别的 AOF 文件重写在执行，那么 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 返回一个错误，并且这个新的 <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 请求也不会被预定到下次执行。</li>
 </ul>
 <p>从 Redis 2.4 开始， AOF 重写由 Redis 自行触发， <a class="reference internal" href="#bgrewriteaof">BGREWRITEAOF</a> 仅仅用于手动触发重写操作。</p>
@@ -110,17 +110,9 @@ Background append only file rewriting started
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -145,9 +137,17 @@ Background append only file rewriting started
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>

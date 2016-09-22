@@ -26,7 +26,7 @@
     <link rel="top" title="Redis 命令参考" href="../index.html" />
     <link rel="up" title="String（字符串）" href="index.html" />
     <link rel="next" title="DECRBY" href="decrby.html" />
-    <link rel="prev" title="BITOP" href="bitop.html" /> 
+    <link rel="prev" title="BITFIELD" href="bitfield.html" /> 
 
 <!--[if lte IE 6]>
 <link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
@@ -47,7 +47,7 @@
           <a href="decrby.html" title="DECRBY"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="bitop.html" title="BITOP"
+          <a href="bitfield.html" title="BITFIELD"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Redis 命令参考</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">String（字符串）</a> &raquo;</li> 
@@ -66,7 +66,7 @@
 <p>如果 <code class="docutils literal"><span class="pre">key</span></code> 不存在，那么 <code class="docutils literal"><span class="pre">key</span></code> 的值会先被初始化为 <code class="docutils literal"><span class="pre">0</span></code> ，然后再执行 <a class="reference internal" href="#decr">DECR</a> 操作。</p>
 <p>如果值包含错误的类型，或字符串类型的值不能表示为数字，那么返回一个错误。</p>
 <p>本操作的值限制在 64 位(bit)有符号数字表示之内。</p>
-<p>关于递增(increment) / 递减(decrement)操作的更多信息，请参见 <a class="reference internal" href="incr.html#incr"><em>INCR</em></a> 命令。</p>
+<p>关于递增(increment) / 递减(decrement)操作的更多信息，请参见 <a class="reference internal" href="incr.html#incr"><span>INCR</span></a> 命令。</p>
 <dl class="docutils">
 <dt><strong>可用版本：</strong></dt>
 <dd>&gt;= 1.0.0</dd>
@@ -129,17 +129,9 @@ redis&gt; DECR company
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -157,16 +149,24 @@ redis&gt; DECR company
           <a href="decrby.html" title="DECRBY"
              >next</a> |</li>
         <li class="right" >
-          <a href="bitop.html" title="BITOP"
+          <a href="bitfield.html" title="BITFIELD"
              >previous</a> |</li>
         <li><a href="../index.html">Redis 命令参考</a> &raquo;</li>
           <li><a href="index.html" >String（字符串）</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>

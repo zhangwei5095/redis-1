@@ -63,11 +63,11 @@
 <span id="id1"></span><h1>SCRIPT LOAD<a class="headerlink" href="#script-load" title="Permalink to this headline">¶</a></h1>
 <p><strong>SCRIPT LOAD script</strong></p>
 <p>将脚本 <code class="docutils literal"><span class="pre">script</span></code> 添加到脚本缓存中，但并不立即执行这个脚本。</p>
-<p><a class="reference internal" href="eval.html#eval"><em>EVAL</em></a> 命令也会将脚本添加到脚本缓存中，但是它会立即对输入的脚本进行求值。</p>
+<p><a class="reference internal" href="eval.html#eval"><span>EVAL</span></a> 命令也会将脚本添加到脚本缓存中，但是它会立即对输入的脚本进行求值。</p>
 <p>如果给定的脚本已经在缓存里面了，那么不做动作。</p>
 <p>在脚本被加入到缓存之后，通过 EVALSHA 命令，可以使用脚本的 SHA1 校验和来调用这个脚本。</p>
-<p>脚本可以在缓存中保留无限长的时间，直到执行 <a class="reference internal" href="script_flush.html#script-flush"><em>SCRIPT FLUSH</em></a> 为止。</p>
-<p>关于使用 Redis 对 Lua 脚本进行求值的更多信息，请参见 <a class="reference internal" href="eval.html#eval"><em>EVAL</em></a> 命令。</p>
+<p>脚本可以在缓存中保留无限长的时间，直到执行 <a class="reference internal" href="script_flush.html#script-flush"><span>SCRIPT FLUSH</span></a> 为止。</p>
+<p>关于使用 Redis 对 Lua 脚本进行求值的更多信息，请参见 <a class="reference internal" href="eval.html#eval"><span>EVAL</span></a> 命令。</p>
 <dl class="docutils">
 <dt><strong>可用版本：</strong></dt>
 <dd>&gt;= 2.6.0</dd>
@@ -110,17 +110,9 @@ redis&gt; EVALSHA 232fd51614574cf0867b83d384a5e898cfd24e5a 0
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
-<div id="ad">
-    <h2>广告</h2>
-    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
-    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
-    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
-    <ul>
-        <li>中国 BGP 七线 / 美国五机房可选</li>
-        <li>独立 IP / root 权限</li>
-        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
-        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
-    </ul>
+<div id="sponser">
+    <h2>赞助商</h2>
+    <p>我们正在寻找赞助商，有意对这个网站进行赞助的朋友请联系 huangz1990@gmail.com 。</p>
 </div>
 
           </div>
@@ -145,9 +137,17 @@ redis&gt; EVALSHA 232fd51614574cf0867b83d384a5e898cfd24e5a 0
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2013, Redis.
-      Last updated on Dec 31, 2014.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3b1.
+        &copy; Copyright 2015, Redis.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3.
     </div>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-53959484-7', 'auto');
+    ga('send', 'pageview');
+  </script>
   </body>
 </html>
